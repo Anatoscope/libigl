@@ -2,7 +2,7 @@
 include(DownloadProject)
 
 # With CMake 3.8 and above, we can hide warnings about git being in a
-# detached head by passing an extra GIT_CONFIG option
+# detached head by passing an extra GIT_COFIG option
 if(NOT (${CMAKE_VERSION} VERSION_LESS "3.8.0"))
 	set(LIBIGL_EXTRA_OPTIONS "GIT_CONFIG advice.detachedHead=false")
 else()
@@ -34,8 +34,8 @@ endfunction()
 ## CoMISo
 function(igl_download_comiso)
 	igl_download_project(CoMISo
-		GIT_REPOSITORY https://github.com/libigl/CoMISo.git
-		GIT_TAG        fea3ee0ba7d42ee3eca202d484e4fad855e4d6aa
+               GIT_REPOSITORY https://github.com/Anatoscope/CoMISo.git
+               GIT_TAG        b97463f97a152cb6bca31ef0fe3cfd4d13edff04
 	)
 endfunction()
 
@@ -44,14 +44,6 @@ function(igl_download_cork)
 	igl_download_project(cork
 		GIT_REPOSITORY https://github.com/libigl/cork.git
 		GIT_TAG        27ad8a285838f5a480d856429e39d3d56d4338f9
-	)
-endfunction()
-
-## Eigen
-function(igl_download_eigen)
-	igl_download_project(eigen
-		URL           http://bitbucket.org/eigen/eigen/get/3.2.10.tar.gz
-		URL_MD5       8ad10ac703a78143a4062c9bda9d8fd3
 	)
 endfunction()
 
